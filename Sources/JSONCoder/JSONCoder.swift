@@ -14,7 +14,7 @@ public struct JSONCoder {
         }
     }
     
-    public static func encode(_ data: Data) -> Data? {
+    public static func encode<T: Encodable>(_ data: T) -> Data? {
         do {
             return try JSONEncoder().encode(data)
         } catch {
