@@ -3,9 +3,9 @@
 
 import Foundation
 
-struct JSONCoder {
+public struct JSONCoder {
     
-    static func decode<T: Codable>(_ data: Data) -> T? {
+    public static func decode<T: Codable>(_ data: Data) -> T? {
         do {
             return try JSONDecoder().decode(T.self, from: data)
         } catch {
@@ -14,7 +14,7 @@ struct JSONCoder {
         }
     }
     
-    static func encode(_ data: Data) -> Data? {
+    public static func encode(_ data: Data) -> Data? {
         do {
             return try JSONEncoder().encode(data)
         } catch {
@@ -22,6 +22,5 @@ struct JSONCoder {
             return nil
         }
     }
-    
     
 }
